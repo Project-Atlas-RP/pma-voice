@@ -80,6 +80,7 @@ end
 ---@param radioChannel number the current channel to remove them from
 function removePlayerFromRadio(source, radioChannel)
 	logger.verbose('[radio] Removed %s from radio %s', source, radioChannel)
+
 	radioData[radioChannel] = radioData[radioChannel] or {}
 	for player, _ in pairs(radioData[radioChannel]) do
 		TriggerClientEvent('pma-voice:removePlayerFromRadio', player, source)
